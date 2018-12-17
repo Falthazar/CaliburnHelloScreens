@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.HelloScreens", "Caliburn.Micro.HelloScreens\Caliburn.Micro.HelloScreens.csproj", "{FE5DC5CB-D16A-4A4C-A0E5-92CB9C55C94D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHelloScreens", "WpfHelloScreens\WpfHelloScreens.csproj", "{A0B22DBD-574D-4553-A979-C26F2F3ED8D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE5DC5CB-D16A-4A4C-A0E5-92CB9C55C94D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5DC5CB-D16A-4A4C-A0E5-92CB9C55C94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5DC5CB-D16A-4A4C-A0E5-92CB9C55C94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5DC5CB-D16A-4A4C-A0E5-92CB9C55C94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B22DBD-574D-4553-A979-C26F2F3ED8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B22DBD-574D-4553-A979-C26F2F3ED8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B22DBD-574D-4553-A979-C26F2F3ED8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B22DBD-574D-4553-A979-C26F2F3ED8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0EC1E31-719F-435A-A4C0-E7A3D514CF9A}
+	EndGlobalSection
+EndGlobal

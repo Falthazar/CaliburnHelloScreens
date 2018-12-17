@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="Caliburn.Micro.HelloScreens.Customers.CustomerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <DockPanel Margin="12">
+            <StackPanel
+                HorizontalAlignment="Right"
+                DockPanel.Dock="Bottom"
+                Orientation="Horizontal">
+                <Button x:Name="Save"
+                    Content="Save" />
+                <Button x:Name="TryClose"
+                    Content="Close" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock
+                    FontSize="20"
+                    Foreground="White"
+                    Text="This is where the customer details would go..." />
+                <Button x:Name="EditAddress"
+                    Content="EditAddress" />
+            </StackPanel>
+        </DockPanel>
+
+        <ContentControl x:Name="Dialogs"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch" />
+    </Grid>
+</UserControl>

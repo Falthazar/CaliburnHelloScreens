@@ -1,0 +1,69 @@
+﻿<UserControl
+    x:Class="Caliburn.Micro.HelloScreens.Shell.ShellView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
+    xmlns:local="clr-namespace:Caliburn.Micro.HelloScreens.Framework.Controls"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+    <Grid Background="#FF007400">
+        <!--  Resources and TiledBackground control borrowed from the SL4 JetPack theme.  -->
+        <Image
+            Source="/Resources/Images/backgroundshadow.png"
+            Stretch="Fill" />
+
+        <DockPanel>
+            <TextBlock
+                Margin="4,4,0,12"
+                DockPanel.Dock="Top"
+                FontSize="28"
+                FontWeight="Bold"
+                Foreground="White"
+                Text="Hello Screens" />
+
+            <ItemsControl x:Name="Items"
+                HorizontalAlignment="Center"
+                DockPanel.Dock="Bottom">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            Margin="8"
+                            cal:Message.Attach="Show">
+                            <Grid Width="100">
+                                <StackPanel>
+                                    <Image
+                                        Width="48"
+                                        Height="48"
+                                        Source="{Binding Icon}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        Text="{Binding IconName,
+                                                       Mode=TwoWay}" />
+                                </StackPanel>
+                                <TextBlock
+                                    Margin="2"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    Text="{Binding Status,
+                                                   Mode=TwoWay}" />
+                            </Grid>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <mah:TransitioningContentControl x:Name="ActiveItem"
+                Margin="20"
+                Style="{StaticResource specialTransition}" />
+        </DockPanel>
+
+        <ContentControl x:Name="Dialogs"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch" />
+    </Grid>
+
+</UserControl>
