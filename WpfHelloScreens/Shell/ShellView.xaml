@@ -41,15 +41,13 @@
                                         Source="{Binding Icon}" />
                                     <TextBlock
                                         HorizontalAlignment="Center"
-                                        Text="{Binding IconName,
-                                                       Mode=TwoWay}" />
+                                        Text="{Binding IconName}" />
                                 </StackPanel>
                                 <TextBlock
                                     Margin="2"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Top"
-                                    Text="{Binding Status,
-                                                   Mode=TwoWay}" />
+                                    Text="{Binding Status}" />
                             </Grid>
                         </Button>
                     </DataTemplate>

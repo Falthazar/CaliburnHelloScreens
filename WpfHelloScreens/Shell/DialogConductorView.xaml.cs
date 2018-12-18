@@ -43,12 +43,12 @@
         IEnumerable<UIElement> GetBackground() {
             var contentControl = (ContentControl)Parent;
             var container = (Panel)contentControl.Parent;
-            return container.Children.Cast<Control>().Where(child => child != contentControl);
+            return container.Children.Cast<FrameworkElement>().Where(child => child != contentControl);
         }
 
         void ChangeEnabledState(IEnumerable<UIElement> background, bool state) {
             foreach(var uiElement in background) {
-                var control = uiElement as Control;
+                var control = uiElement as FrameworkElement;
                 if (control != null)
                     control.IsEnabled = state;
                 else

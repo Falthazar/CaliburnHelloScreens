@@ -18,17 +18,19 @@
         Window mainWindow;
         bool actuallyClosing;
 
-        public ScreensBootstrapper()
-        {
+        public ScreensBootstrapper() {
             Initialize();
         }
 
         protected override void Configure() {
-            container = CompositionHost.Initialize(
+            container = new CompositionContainer(
                 new AggregateCatalog(
-                    AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()
-                    )
-                );
+                    AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()));
+            //CompositionHost.Initialize(
+            //new AggregateCatalog(
+            //    AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()
+            //    )
+            //);
 
             var batch = new CompositionBatch();
 
@@ -46,7 +48,7 @@
             var contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(serviceType) : key;
             var exports = container.GetExportedValues<object>(contract);
 
-            if(exports.Any())
+            if (exports.Any())
                 return exports.First();
 
             throw new Exception(string.Format("Could not locate any instances of contract {0}.", contract));
@@ -63,28 +65,28 @@
         protected override void OnStartup(object sender, StartupEventArgs e) {
             DisplayRootViewFor<IShell>();
 
-            if(Application.IsRunningOutOfBrowser) {
                 mainWindow = Application.MainWindow;
                 mainWindow.Closing += MainWindowClosing;
-            }
         }
 
-        void MainWindowClosing(object sender, ClosingEventArgs e) {
+        void MainWindowClosing(object sender, CancelEventArgs e) {
             if (actuallyClosing)
                 return;
 
             e.Cancel = true;
 
-            Execute.OnUIThread(() => {
-                var shell = IoC.Get<IShell>();
+            Execute.OnUIThread(
+                () => {
+                    var shell = IoC.Get<IShell>();
 
-                shell.CanClose(result => {
-                    if(result) {
-                        actuallyClosing = true;
-                        mainWindow.Close();
-                    }
+                    shell.CanClose(
+                        result => {
+                            if (result) {
+                                actuallyClosing = true;
+                                mainWindow.Close();
+                            }
+                        });
                 });
-            });
         }
     }
 }

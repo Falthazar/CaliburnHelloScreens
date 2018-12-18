@@ -13,7 +13,7 @@
             createMessageBox = messageBoxFactory;
         }
 
-        public IScreen ActiveItem { get; private set; }
+        public IScreen ActiveItem { get; set; }
 
         public IEnumerable GetChildren() {
             return ActiveItem != null ? new[] { ActiveItem } : new object[0];

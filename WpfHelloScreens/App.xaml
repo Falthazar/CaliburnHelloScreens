@@ -4,19 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="clr-namespace:Caliburn.Micro.HelloScreens.Framework.Converters"
     xmlns:local="clr-namespace:WpfHelloScreens"
-    xmlns:shell="clr-namespace:Caliburn.Micro.HelloScreens.Shell"
-    StartupUri="MainWindow.xaml">
+    xmlns:shell="clr-namespace:Caliburn.Micro.HelloScreens.Shell">
     <Application.Resources>
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <shell:ScreensBootstrapper x:Key="bootstrapper" />
+                </ResourceDictionary>
                 <ResourceDictionary Source="Resources/DefaultStyles.xaml" />
                 <ResourceDictionary Source="Resources/NamedStyles.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-
-
-            <shell:ScreensBootstrapper x:Key="bootstrapper" />
 
             <BooleanToVisibilityConverter x:Key="booleanToVisibility" />
             <converters:NullToCollapsedConverter x:Key="nullToCollapsed" />
