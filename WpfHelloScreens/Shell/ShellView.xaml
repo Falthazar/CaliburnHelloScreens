@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
     xmlns:local="clr-namespace:Caliburn.Micro.HelloScreens.Framework.Controls"
-    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    Width="1000"
+    Height="500">
     <Grid Background="#FF007400">
         <!--  Resources and TiledBackground control borrowed from the SL4 JetPack theme.  -->
         <Image

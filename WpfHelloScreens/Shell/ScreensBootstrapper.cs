@@ -65,8 +65,9 @@
         protected override void OnStartup(object sender, StartupEventArgs e) {
             DisplayRootViewFor<IShell>();
 
-                mainWindow = Application.MainWindow;
-                mainWindow.Closing += MainWindowClosing;
+            mainWindow = Application.MainWindow;
+
+            mainWindow.Closing += MainWindowClosing;
         }
 
         void MainWindowClosing(object sender, CancelEventArgs e) {
